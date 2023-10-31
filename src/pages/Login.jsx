@@ -1,9 +1,9 @@
-import Logo from "../assets/Logo.png"
-import {useState} from "react"
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../config/firebase"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom";
+import { auth } from "../config/firebase"
+import { signInWithEmailAndPassword } from "firebase/auth";
 import authService from "../utils/authService";
+import Logo from "../assets/logo/logo-black.png"
 
 const Login = () => {
     const [error, setError] = useState(false)
@@ -19,13 +19,10 @@ const Login = () => {
             // Signed up 
             const user = userCredential.user;
             user.getIdToken().then((idToken) => {
-                // idToken berisi token Firebase Authentication
                 authService.storeCredentialsToCookie(idToken);
                 return navigate("/dashboard/admin");
-                // Lakukan sesuatu dengan idToken, seperti mengirimnya ke server untuk otorisasi
 
             }).catch((error) => {
-                // Penanganan error jika gagal mendapatkan ID token
                 console.error("Error getting ID token:", error);
             });
             // return navigate("/");

@@ -1,10 +1,38 @@
-import IconLily from '../../assets/icon-lily-flower.svg'
-import IconDiamond from '../../assets/icon-diamond.svg'
-import SampleImage from "../../assets/sample.png"
-import ListBook from '../../data/listBook.json'
-import {BiSearch} from 'react-icons/bi'
+import { useState, useEffect } from "react"
+import { db } from "../../config/firebase"
+import { collection, onSnapshot } from "firebase/firestore"
+
+// Import Icon 
+import IconLily from "../../assets/icons/icon-lily-flower.svg"
+import IconDiamond from "../../assets/icons/icon-diamond.svg"
+import {BiSearch} from "react-icons/bi"
+
+// Library for timeStamp
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+dayjs.extend(relativeTime);
 
 const ListBuku = () => {
+    const [data, setData] = useState([]);
+    
+    useEffect(() => {
+        // Fetch data from Firebase Database
+        const unsub = onSnapshot(collection(db, "bookdata"), (snapShot) => {
+            let list = [];
+            snapShot.docs.forEach((doc) => {
+                list.push({ id: doc.id, ...doc.data() });
+            });
+            setData(list);
+        }, (err) => {
+            console.log(err)
+        }
+        );
+
+        return () => {
+            unsub();
+        };
+    }, [])
+
   return (
     <>
         <section className="mt-40">
@@ -29,7 +57,7 @@ const ListBuku = () => {
                         {/* Search Bar */}
                         <div className="relative">
                             <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
-                                <BiSearch color='#89827D' size={20} />
+                                <BiSearch color="#89827D" size={20} />
                             </div>
                             <input
                             type="search"
@@ -81,15 +109,15 @@ const ListBuku = () => {
                 
                 {/* Content */}
                 <div className="mt-4 md:mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto gap-[40px]">
-                    {ListBook.map((items) => (
-                        <div key={items.id}>
-                            <img className="mx-auto w-full" src={SampleImage} alt="" />
+                    {data.map((items) => (
+                        <a href={`/detail-buku/${items.id}`} key={items.id}>
+                            <img className="mx-auto w-full" src={items.img} alt="" />
                             <div className="mt-4">
-                                <p className="book-author">{items.author}</p>
-                                <h2 className="book-title mt-2">{items.title}</h2>
-                                <p className="book-time">{items.time}</p>
+                                <p className="list-author">{items.author}</p>
+                                <h2 className="list-title mt-2">{items.title}</h2>
+                                <p className="list-time">Posted {dayjs(items.timestamp.toDate()).fromNow()}</p>
                             </div>
-                        </div>
+                        </a>
                     ))}
                     
                 </div>

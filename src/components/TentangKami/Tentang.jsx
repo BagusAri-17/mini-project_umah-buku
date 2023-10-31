@@ -1,6 +1,6 @@
-import IconLily from '../../assets/icon-lily-flower.svg'
-import IconDiamond from '../../assets/icon-diamond.svg'
-import TentangImage from '../../assets/image/tentang-kami.png'
+import TentangImage from "../../assets/image/tentang-kami.png"
+import IconLily from "../../assets/icons/icon-lily-flower.svg"
+import IconDiamond from "../../assets/icons/icon-diamond.svg"
 
 const Tentang = () => {
   return (

@@ -1,7 +1,7 @@
-import IconLily from '../../assets/icon-lily-flower.svg'
-import IconDiamond from '../../assets/icon-diamond.svg'
-import TimImage from '../../assets/image/team-kami-1.png'
-import {BiLogoInstagramAlt, BiLogoTwitter, BiLogoLinkedinSquare} from 'react-icons/bi'
+import TimImage from "../../assets/image/team-kami-1.png"
+import IconLily from "../../assets/icons/icon-lily-flower.svg"
+import IconDiamond from "../../assets/icons/icon-diamond.svg"
+import { BiLogoInstagramAlt, BiLogoTwitter, BiLogoLinkedinSquare } from "react-icons/bi"
 
 const Tim = () => {
   return (

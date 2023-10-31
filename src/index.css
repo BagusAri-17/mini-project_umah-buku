@@ -23,14 +23,35 @@ body {
 }
 
 
-/* List Book Section */
+/* Detail Book Section */
 .book-author {
-    @apply uppercase text-center text-sm text-primary md:leading-[20px] tracking-[2px]
+    @apply uppercase text-sm text-primary md:leading-[20px] tracking-[2px]
 }
 .book-title {
-    @apply uppercase text-center text-2xl text-primary tracking-[1px]
+    @apply uppercase text-2xl text-primary tracking-[1px]
+}
+.book-category {
+    @apply uppercase text-base text-primary md:leading-[20px] tracking-[2px]
+}
+.book-genres {
+    @apply text-sm text-primary leading-4 tracking-widest
 }
 .book-time {
+    @apply text-xs text-primary tracking-[1px]
+}
+.book-description {
+    @apply text-justify text-sm text-primary md:leading-[20px] tracking-[2px]
+}
+
+
+/* List Book Section */
+.list-author {
+    @apply uppercase text-center text-sm text-primary md:leading-[20px] tracking-[2px]
+}
+.list-title {
+    @apply uppercase text-center text-2xl text-primary tracking-[1px]
+}
+.list-time {
     @apply uppercase text-center text-xs text-primary tracking-[1px]
 }
 

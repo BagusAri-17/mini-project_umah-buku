@@ -1,8 +1,8 @@
-import IconLily from '../../assets/icon-lily-flower.svg'
-import IconDiamond from '../../assets/icon-diamond.svg'
-import Novel from '../../assets/image/koleksi-buku_novel.png'
-import Cerpen from '../../assets/image/koleksi-buku_cerpen.png'
-import Cerak from '../../assets/image/koleksi-buku_cerak.png'
+import Novel from "../../assets/image/koleksi-buku_novel.png"
+import Cerpen from "../../assets/image/koleksi-buku_cerpen.png"
+import Cerak from "../../assets/image/koleksi-buku_cerak.png"
+import IconLily from "../../assets/icons/icon-lily-flower.svg"
+import IconDiamond from "../../assets/icons/icon-diamond.svg"
 
 const Koleksi = () => {
   return (

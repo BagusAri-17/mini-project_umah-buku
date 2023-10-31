@@ -1,7 +1,7 @@
-import {useState} from 'react'
-import Logo from '../assets/Logo.png'
-import {Link} from 'react-router-dom'
-import {Divide as Hamburger} from 'hamburger-react'
+import { useState } from "react"
+import { Link } from "react-router-dom"
+import Logo from "../assets/logo/logo-black.png"
+import { Divide as Hamburger } from "hamburger-react"
 
 const Header = () => {
     // Handling NavToggle
@@ -34,7 +34,7 @@ const Header = () => {
                         <Hamburger color={"#3A2E26"} size={32} toggled={isOpen} toggle={setOpen} />
                     </div>
                     <div
-                        className={isOpen ? `items-center justify-between w-full md:flex md:w-auto` : 'hidden items-center justify-between w-full md:flex md:w-auto'}
+                        className={isOpen ? `items-center justify-between w-full md:flex md:w-auto shadow` : "hidden items-center justify-between w-full md:flex md:w-auto"}
                         id="navbar-sticky"
                     >
                         <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row gap-4 md:mt-0 md:border-0 md:bg-white">

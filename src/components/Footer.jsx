@@ -1,4 +1,4 @@
-import {BiLogoFacebook, BiLogoInstagramAlt, BiLogoTwitter, BiLogoYoutube, BiMailSend} from 'react-icons/bi'
+import {BiLogoFacebook, BiLogoInstagramAlt, BiLogoTwitter, BiLogoYoutube, BiMailSend} from "react-icons/bi"
 
 const Footer = () => {
   return (
@@ -9,13 +9,13 @@ const Footer = () => {
                     <div className=" md:col-start-1">
                         <h4 className="footer-title">Follow Us</h4>
                         <div className="flex items-center gap-2 mt-4 justify-start md:justify-center">
-                            <BiLogoFacebook color='#ffffff' size={24} />
+                            <BiLogoFacebook color="#ffffff" size={24} />
                             <div className="w-8 h-[1px] bg-[#CECECA]"></div>
-                            <BiLogoInstagramAlt color='#ffffff' size={24} />
+                            <BiLogoInstagramAlt color="#ffffff" size={24} />
                             <div className="w-8 h-[1px] bg-[#CECECA]"></div>
-                            <BiLogoTwitter color='#ffffff' size={24} />
+                            <BiLogoTwitter color="#ffffff" size={24} />
                             <div className="w-8 h-[1px] bg-[#CECECA]"></div>
-                            <BiLogoYoutube color='#ffffff' size={24} />
+                            <BiLogoYoutube color="#ffffff" size={24} />
                         </div>
                         <p className="mt-6 footer-description">umahbuku.official@gmail.com</p>
                     </div>
@@ -30,7 +30,7 @@ const Footer = () => {
                                     placeholder="E-Mail"
                                     aria-label="Full name"
                                 />
-                                <BiMailSend color='#ffffff' size={24} />
+                                <BiMailSend color="#ffffff" size={24} />
                             </div>
                         </form>
                     </div>
