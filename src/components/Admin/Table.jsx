@@ -178,13 +178,13 @@ const Table = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {data.map((items) => (
+                        {data.map((items, index) => (
                             <tr key={items.id} className="bg-white border-b">
                                 <th
                                     scope="row"
                                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
                                 >
-                                    {items.id}
+                                    {index + 1}
                                 </th>
                                 <th
                                     scope="row"

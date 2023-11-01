@@ -1,6 +1,6 @@
-import { Outlet } from "react-router-dom"
 import authService from "../utils/authService"
-import {Unauthorized} from "../pages/Unauthorized"
+import { Unauthorized } from "../pages/Unauthorized"
+import { Outlet } from "react-router-dom"
 
 export function PrivateRoute() {
 

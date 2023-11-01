@@ -7,7 +7,9 @@
 body {
     @apply font-balthazar
 }
-
+html {
+    scroll-behavior: smooth;
+}
 /* Header Section */
 .nav-item {
     @apply text-primary uppercase tracking-wide text-base py-2 pl-3 pr-4 md:p-0 block rounded md:rounded-none hover:text-white md:hover:text-primary/80 hover:bg-primary md:hover:bg-transparent

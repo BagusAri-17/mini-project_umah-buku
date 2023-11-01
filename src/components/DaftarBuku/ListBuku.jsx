@@ -14,6 +14,7 @@ dayjs.extend(relativeTime);
 
 const ListBuku = () => {
     const [data, setData] = useState([]);
+    const [search, setSearch] = useState("");
     
     useEffect(() => {
         // Fetch data from Firebase Database
@@ -60,18 +61,19 @@ const ListBuku = () => {
                                 <BiSearch color="#89827D" size={20} />
                             </div>
                             <input
+                            onChange={(e) => setSearch(e.target.value)}
                             type="search"
                             id="default-search"
                             className="searching block w-full p-4 pl-12 pr-24 text-base text-primary border border-primary"
                             placeholder="CARI BUKU KESUKAANMU ..."
                             required=""
                             />
-                            <button
+                            {/* <button
                             type="submit"
                             className="hidden md:block text-white absolute right-2.5 bottom-2.5 bg-primary hover:bg-primary/80 rounded-lg text-base px-4 py-2"
                             >
                             Search
-                            </button>
+                            </button> */}
                         </div>
                         
                         {/* Selection: Category, Genre, Urutkan */}
@@ -81,9 +83,10 @@ const ListBuku = () => {
                             <div>
                                 <select className="w-full p-2 text-base text-primary uppercase border border-primary">
                                     <option selected>Pilih Category</option>
-                                    <option defaultValue="cerita-anak">Cerita Anak</option>
-                                    <option defaultValue="novel">Novel</option>
-                                    <option defaultValue="cerpen">Cerpen</option>
+                                    <option defaultValue="Cerita Anak">Cerita Anak</option>
+                                    <option defaultValue="Novel">Novel</option>
+                                    <option defaultValue="Cerita Pendek">Cerita Pendek</option>
+                                    <option defaultValue="Cerita Bersambung">Cerita Bersambung</option>
                                 </select>
                             </div>
 
@@ -91,7 +94,11 @@ const ListBuku = () => {
                             <div>
                                 <select className="w-full p-2 text-base text-primary uppercase border border-primary">
                                     <option selected>Pilih Genre</option>
-                                    <option defaultValue="cerita-anak">Cerita Anak</option>
+                                    <option defaultValue="Fiksi">Fiksi</option>
+                                    <option defaultValue="Non-Fiksi">Non Fiksi</option>
+                                    <option defaultValue="Romansa">Romansa</option>
+                                    <option defaultValue="Misteri">Misteri</option>
+                                    <option defaultValue="Komedi">Komedi</option>
                                 </select>
                             </div>
 
@@ -109,7 +116,9 @@ const ListBuku = () => {
                 
                 {/* Content */}
                 <div className="mt-4 md:mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto gap-[40px]">
-                    {data.map((items) => (
+                    {data.filter((item) => {
+                        return search.toLowerCase() === "" ? item : item.title.toLowerCase().includes(search)
+                    }).map((items) => (
                         <a href={`/detail-buku/${items.id}`} key={items.id}>
                             <img className="mx-auto w-full" src={items.img} alt="" />
                             <div className="mt-4">

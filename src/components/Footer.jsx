@@ -3,7 +3,7 @@ import {BiLogoFacebook, BiLogoInstagramAlt, BiLogoTwitter, BiLogoYoutube, BiMail
 const Footer = () => {
   return (
     <>
-        <footer className="mt-20 py-10 bg-primary">
+        <footer className="py-10 mt-20 bg-primary">
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className=" md:col-start-1">

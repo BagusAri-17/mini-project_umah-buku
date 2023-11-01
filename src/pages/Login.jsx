@@ -20,7 +20,7 @@ const Login = () => {
             const user = userCredential.user;
             user.getIdToken().then((idToken) => {
                 authService.storeCredentialsToCookie(idToken);
-                return navigate("/dashboard/admin");
+                return navigate("/dashboard/main");
 
             }).catch((error) => {
                 console.error("Error getting ID token:", error);

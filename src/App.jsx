@@ -17,18 +17,23 @@ const App = () => {
     <Router>
       <Routes>
 
-        
           <Route path="/" element={<LandingPage />} />
-          <Route path="/dashboard/main" element={<DashboardMain />} />
-          <Route path="/dashboard/table" element={<DashboardTable />} />
-          <Route path="/dashboard/add" element={<DashboardAdd />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/daftar-buku" element={<DaftarBuku />} />
           <Route path="/tulis-ai" element={<TulisAI />} />
           <Route path="/detail-buku/:id" element={<DetailBuku />} />
           <Route path="/tentang-kami" element={<TentangKami />} />
-          <Route path="*" element={<NotFound />} />
 
+          <Route path="/" element={<PrivateRoute />}>
+            <Route path="/dashboard/main" element={<DashboardMain />} />
+            <Route path="/dashboard/table" element={<DashboardTable />} />
+            <Route path="/dashboard/add" element={<DashboardAdd />} />
+          </Route>
+
+          <Route path="/" element={<ProtectRoute />}>
+            <Route path="/login" element={<Login />} />
+          </Route>
+
+          <Route path="*" element={<NotFound />} />
 
       </Routes>
     </Router>

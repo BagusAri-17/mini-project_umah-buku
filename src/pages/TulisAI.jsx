@@ -1,12 +1,15 @@
+import Footer from "../components/Footer";
 import Header from "../components/Header"
+import Hero from "../components/TulisAI/Hero";
+import TulisCerita from "../components/TulisAI/TulisCerita";
 
 const TulisAI = () => {
   return (
     <>
       <Header />
-      <div className="h-screen flex items-center justify-center">
-        <h2 className="section-title">AI Section</h2>
-      </div>
+      <Hero />
+      <TulisCerita />
+      <Footer />
     </>
   )
 }
