@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useState } from "react"
 import Sidebar from "../components/Sidebar"
 import { BiMenu } from "react-icons/bi"
@@ -7,6 +8,10 @@ const DashboardMain = () => {
   
   return (
     <>
+      <Helmet>
+          <title>Dashboard - Main</title>
+          <meta name="description" content="Dashboard Main" />
+      </Helmet>
       <Sidebar open={open} />
       <main className={`w-[cal(100%-176px)] md:w-[cal(100%-240px)] lg:w-[cal(100%-256px)] bg-gray-50 min-h-screen ${open ? "ml-44 md:ml-60 lg:ml-64" : "ml-0"}`}>
             <div className="py-2 px-4 bg-white flex items-center gap-2 shadow-md shadow-black/5">

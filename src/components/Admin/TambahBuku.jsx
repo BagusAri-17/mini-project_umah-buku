@@ -36,6 +36,8 @@ const TambahBuku = () => {
         image && uploadImage();
     }, [image])
 
+    
+
     // Handle Checkbox
     const handleCheckboxChange = (e) => {
         const { value } = e.target;

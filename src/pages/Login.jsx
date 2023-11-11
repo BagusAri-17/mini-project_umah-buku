@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Helmet } from "react-helmet"
 import { useNavigate } from "react-router-dom";
 import { auth } from "../config/firebase"
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -34,6 +35,10 @@ const Login = () => {
 
   return (
     <>
+        <Helmet>
+          <title>Login Admin</title>
+          <meta name="description" content="Login Admin" />
+        </Helmet>
         <section className="bg-gray-50 ">
             <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
                 <a

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { Helmet } from "react-helmet"
 import { useParams } from "react-router-dom"
 import { db } from "../config/firebase"
 import { getDoc, doc } from "firebase/firestore"
@@ -41,6 +42,10 @@ const DetailBuku = () => {
 
   return (
     <>
+      <Helmet>
+          <title>Detail Buku {book.title}</title>
+          <meta name="description" content="Detail Buku" />
+      </Helmet>
       <Header />
       <div className="my-32">
           <div className="container">
